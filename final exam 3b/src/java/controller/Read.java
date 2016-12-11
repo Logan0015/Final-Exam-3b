@@ -78,9 +78,9 @@ public class Read extends HttpServlet {
             ReadQuery rq = new ReadQuery();
             
             rq.doRead();
-            String table = rq.getHTMLtable();
+            String custTable = rq.getHTMLtable();
             
-            request.setAttribute("table", table);
+            request.setAttribute("table", custTable);
             String url = "/read.jsp";
             
             RequestDispatcher dispatcher = request.getRequestDispatcher(url);

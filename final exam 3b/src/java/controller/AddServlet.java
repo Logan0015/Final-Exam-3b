@@ -75,28 +75,28 @@ public class AddServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
-        String addr1 = request.getParameter("addr1");
-        String addr2 = request.getParameter("addr2");
+        String fName = request.getParameter("fName");
+        String lName = request.getParameter("lastName");
+        String address = request.getParameter("address");
+        String address2 = request.getParameter("address2");
         String city = request.getParameter("city");
         String state = request.getParameter("state");
-        String zip = request.getParameter("zip");
-        String emailAddr = request.getParameter("emailAddr");
+        String zipCode = request.getParameter("zipCode");
+        String emailAddress = request.getParameter("emailAddress");
     
         
-        Customers customer = new Customers();
-        customer.setFirstName(firstName);
-        customer.setLastName(lastName);
-        customer.setAddr1(addr1);
-        customer.setAddr2(addr2);
-        customer.setCity(city);
-        customer.setState(state);
-        customer.setZip(zip);
-        customer.setEmailAddr(emailAddr);
+        Customers data = new Customers();
+        data.setfName(fName);
+        data.setlName(lName);
+        data.setAddress(address);
+        data.setAddress2(address2);
+        data.setCity(city);
+        data.setState(state);
+        data.setZipCode(zipCode);
+        data.setEmailAddress(emailAddress);
         
         AddQuery aq = new AddQuery ();
-        aq.doAdd (customer);
+        aq.doAdd (data);
         
         String url = "/adminread";
         

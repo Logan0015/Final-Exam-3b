@@ -77,7 +77,7 @@ public class AdSearchServlet extends HttpServlet {
             throws ServletException, IOException {
         
             String name = request.getParameter("searchVal");
-            AdminSearchQuery sq = new AdminSearchQuery();
+            AdSearchQuery sq = new AdSearchQuery();
             sq.doSearch(name);
             String table = sq.getHTMLtable();
             request.setAttribute("table", table);

@@ -17,7 +17,7 @@
     <body>
         <%@include file="Administrative/adHeader.jsp" %>    
         <h1>Add Customer</h1>
-        <form name="AddForm" action="addCustomer" method="get">
+        <form name="AddForm" action="addCustomer" method="post">
             <table>
                 <tr>
                     <td class="right">

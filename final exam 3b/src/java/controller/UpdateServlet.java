@@ -76,30 +76,30 @@ public class UpdateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        int custID = Integer.parseInt(request.getParameter("id"));
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
-        String addr1 = request.getParameter("addr1");
-        String addr2 = request.getParameter("addr2");
+        int customerID = Integer.parseInt(request.getParameter("id"));
+        String fName = request.getParameter("fName");
+        String lName = request.getParameter("lName");
+        String address = request.getParameter("address");
+        String address2 = request.getParameter("address2");
         String city = request.getParameter("city");
         String state = request.getParameter("state");
-        String zip = request.getParameter("zip");
-        String emailAddr = request.getParameter("emailAddr");
+        String ZipCode = request.getParameter("ZipCode");
+        String emailAddress = request.getParameter("emailAddress");
        
         
-        Customers customer = new Customers ();
-        customer.setCustID(custID);
-        customer.setFirstName(firstName);
-        customer.setLastName(lastName);
-        customer.setAddr1(addr1);
-        customer.setAddr2(addr2);
-        customer.setCity(city);
-        customer.setState(state);
-        customer.setZip(zip);
-        customer.setEmailAddr(emailAddr);
+        Customers data = new Customers ();
+        data.setCustomerID(customerID);
+        data.setfName(fName);
+        data.setlName(lName);
+        data.setAddress(address);
+        data.setAddress2(address2);
+        data.setCity(city);
+        data.setState(state);
+        data.setZipCode(ZipCode);
+        data.setEmailAddress(emailAddress);
         
         UpdateQuery uq = new UpdateQuery();
-        uq.doUpdate(customer);
+        uq.doUpdate(data);
         
         String url = "/adminread";
         
