@@ -14,7 +14,16 @@
     
 
     <body>
-        <h1>Hello World!</h1>
+        <%@ include file="includes/header.jsp" %>
+        <%@include file="includes/menu.jsp" %>
+        <h1>Customers</h1>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in mi volutpat, aliquam quam eu, vehicula tellus. Sed id neque blandit, placerat lectus id, ornare orci. Suspendisse rhoncus enim et condimentum tristique. Phasellus et tempus lorem, id posuere lectus. Aenean semper tempus sapien vitae dignissim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sodales velit sit amet lorem eleifend faucibus.    
+        </p>
+        <p>
+        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed malesuada sapien nec mi ultrices, non faucibus mauris scelerisque.   
+        </p>
+        <%@include file="includes/footer.jsp" %>
     </body>
     
     
