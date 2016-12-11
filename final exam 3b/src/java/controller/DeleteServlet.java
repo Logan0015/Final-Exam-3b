@@ -5,7 +5,7 @@
  */
 package controller;
 
-import dbHelpers.DeleteQuery;
+import dbhelpers.DeleteQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;

@@ -5,8 +5,8 @@
  */
 package controller;
 
-import dbHelpers.AdminSearchQuery;
-import dbHelpers.SearchQuery;
+import dbhelpers.AdSearchQuery;
+import dbhelpers.SearchQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;

@@ -5,7 +5,7 @@ package controller;
  *
  * @author Logan
  */
-import dbHelpers.AReadQuery;
+import dbhelpers.AdReadQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
