@@ -20,7 +20,7 @@ import model.Customers;
  *
  * @author Logan
  */
-@WebServlet(name = "UpdateServlet", urlPatterns = {"/UpdateServlet"})
+@WebServlet(name = "UpdateServlet", urlPatterns = {"/updateCustomer"})
 public class UpdateServlet extends HttpServlet {
 
     /**
@@ -61,7 +61,7 @@ public class UpdateServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        doPost(request, response);
     }
 
     /**
@@ -75,7 +75,36 @@ public class UpdateServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        int custID = Integer.parseInt(request.getParameter("id"));
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String addr1 = request.getParameter("addr1");
+        String addr2 = request.getParameter("addr2");
+        String city = request.getParameter("city");
+        String state = request.getParameter("state");
+        String zip = request.getParameter("zip");
+        String emailAddr = request.getParameter("emailAddr");
+       
+        
+        Customers customer = new Customers ();
+        customer.setCustID(custID);
+        customer.setFirstName(firstName);
+        customer.setLastName(lastName);
+        customer.setAddr1(addr1);
+        customer.setAddr2(addr2);
+        customer.setCity(city);
+        customer.setState(state);
+        customer.setZip(zip);
+        customer.setEmailAddr(emailAddr);
+        
+        UpdateQuery uq = new UpdateQuery();
+        uq.doUpdate(customer);
+        
+        String url = "/adminread";
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher (url);
+        dispatcher.forward(request, response);
     }
 
     /**

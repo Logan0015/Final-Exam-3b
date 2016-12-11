@@ -58,7 +58,7 @@ public class AdSearchQuery {
         
     public void doSearch (String name){
         try {
-            String query = "SELECT * FROM customers WHERE UPPER(firstName) LIKE ? OR UPPER(lastName) LIKE ? ORDER BY customerID ASC";
+            String query = "SELECT * FROM customers WHERE UPPER(fName) LIKE ? OR UPPER(lName) LIKE ? ORDER BY customerID ASC";
             
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, "%" + name.toUpperCase() + "%");

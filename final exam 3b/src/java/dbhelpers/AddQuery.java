@@ -23,9 +23,10 @@ import model.Customers;
 public class AddQuery {
     private Connection conn;
     
-    public AddQuery(){
-        Properties props = new Properties();
-        InputStream instr = getClass().getResourceAsStream("dbConn.properties");
+    public AddQuery () {
+    
+    Properties props = new Properties();
+    InputStream instr = getClass().getResourceAsStream("dbConn.properties");
         try {
             props.load(instr);
         } catch (IOException ex) {
@@ -36,11 +37,11 @@ public class AddQuery {
         } catch (IOException ex) {
             Logger.getLogger(AddQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        String driver = props.getProperty("driver.name");
-        String url = props.getProperty("server.name");
-        String username = props.getProperty("user.name");
-        String passwd = props.getProperty("user.password");
+    
+    String driver = props.getProperty("driver.name");
+    String url = props.getProperty("server.name");
+    String username = props.getProperty("user.name");
+    String passwd = props.getProperty("user.password");
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException ex) {
@@ -50,14 +51,15 @@ public class AddQuery {
             conn = DriverManager.getConnection(url, username, passwd);
         } catch (SQLException ex) {
             Logger.getLogger(AddQuery.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        }
+        
         
     }
     
-    public void doAdd (Customers data) {
-        
+    public void doAdd (Customers data){
+    
         try {
-            String query = "INSERT INTO support (firstName, lastName, email, phone, address, city, state, zipCode, comments, showSupport, keepUpdated) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO customers (fName, lName, address, address2, city, state, zipCode, emailAddress) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             
             PreparedStatement ps = conn.prepareStatement(query);
             
@@ -69,13 +71,12 @@ public class AddQuery {
             ps.setString(6, data.getState());
             ps.setString(7, data.getZipCode());
             ps.setString(8, data.getEmailAddress());
-           
             
             ps.executeUpdate();
             
         } catch (SQLException ex) {
             Logger.getLogger(AddQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
+    
+   }
 }
-

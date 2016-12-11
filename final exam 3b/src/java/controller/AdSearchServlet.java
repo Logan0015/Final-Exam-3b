@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Logan
  */
-@WebServlet(name = "AdSearchServlet", urlPatterns = {"/AdSearchServlet"})
+@WebServlet(name = "AdSearchServlet", urlPatterns = {"/adminSearch"})
 public class AdSearchServlet extends HttpServlet {
 
     /**
@@ -40,10 +40,10 @@ public class AdSearchServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AdSearchServlet</title>");            
+            out.println("<title>Servlet SearchServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AdSearchServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet SearchServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -61,7 +61,7 @@ public class AdSearchServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        doPost(request, response);
     }
 
     /**
@@ -75,7 +75,19 @@ public class AdSearchServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+            String name = request.getParameter("searchVal");
+            AdminSearchQuery sq = new AdminSearchQuery();
+            sq.doSearch(name);
+            String table = sq.getHTMLtable();
+            request.setAttribute("table", table);
+            String url = "/read.jsp";
+            
+            RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+            dispatcher.forward(request, response);
+        
+        
+        
     }
 
     /**

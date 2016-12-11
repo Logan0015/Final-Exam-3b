@@ -20,7 +20,7 @@ import model.Customers;
  *
  * @author Logan
  */
-@WebServlet(name = "AddServlet", urlPatterns = {"/AddCustomers"})
+@WebServlet(name = "AddServlet", urlPatterns = {"/addCustomer"})
 public class AddServlet extends HttpServlet {
 
     /**
@@ -61,7 +61,7 @@ public class AddServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        doPost(request, response);
     }
 
     /**
@@ -75,7 +75,33 @@ public class AddServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String addr1 = request.getParameter("addr1");
+        String addr2 = request.getParameter("addr2");
+        String city = request.getParameter("city");
+        String state = request.getParameter("state");
+        String zip = request.getParameter("zip");
+        String emailAddr = request.getParameter("emailAddr");
+    
+        
+        Customers customer = new Customers();
+        customer.setFirstName(firstName);
+        customer.setLastName(lastName);
+        customer.setAddr1(addr1);
+        customer.setAddr2(addr2);
+        customer.setCity(city);
+        customer.setState(state);
+        customer.setZip(zip);
+        customer.setEmailAddr(emailAddr);
+        
+        AddQuery aq = new AddQuery ();
+        aq.doAdd (customer);
+        
+        String url = "/adminread";
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+        dispatcher.forward (request, response);
     }
 
     /**

@@ -20,7 +20,7 @@ import model.Customers;
  *
  * @author Logan
  */
-@WebServlet(name = "UpdateFormServlet", urlPatterns = {"/UpdateFormServlet"})
+@WebServlet(name = "UpdateFormServlet", urlPatterns = {"/update"})
 public class UpdateFormServlet extends HttpServlet {
 
     /**
@@ -61,7 +61,7 @@ public class UpdateFormServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        doPost(request, response);
     }
 
     /**
@@ -75,7 +75,16 @@ public class UpdateFormServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        int custID = Integer.parseInt(request.getParameter("custID"));
+        ReadRecord rr = new ReadRecord(custID);
+        rr.doRead();
+        Customers customer = rr.getCustomer();
+        request.setAttribute("customer", customer);
+        String url = "/updateForm.jsp";
+        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+        dispatcher.forward(request, response);
+        
     }
 
     /**

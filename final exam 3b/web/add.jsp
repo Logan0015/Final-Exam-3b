@@ -17,7 +17,7 @@
     <body>
         <%@include file="Administrative/adHeader.jsp" %>    
         <h1>Add Customer</h1>
-        <form name="newCust" action="addCustomer" method="post">
+        <form name="AddForm" action="addCustomer" method="get">
             <table>
                 <tr>
                     <td class="right">
@@ -134,8 +134,9 @@
             </table>   
             
             <input type="submit" name="submit" value="Submit"/>
-    <%@include file="Administrative/adFooter.jsp" %>
-        </form>
+            </form>
+        <%@include file="Administrative/adFooter.jsp" %>
+        
     
     </body>
     

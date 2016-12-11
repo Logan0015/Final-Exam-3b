@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Logan
  */
-@WebServlet(name = "DeleteServlet", urlPatterns = {"/DeleteServlet"})
+@WebServlet(name = "DeleteServlet", urlPatterns = {"/delete"})
 public class DeleteServlet extends HttpServlet {
 
     /**
@@ -60,7 +60,7 @@ public class DeleteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        doPost(request, response);
     }
 
     /**
@@ -74,7 +74,14 @@ public class DeleteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       int custID = Integer.parseInt(request.getParameter("custID"));
+        DeleteQuery dq = new DeleteQuery();
+        dq.doDelete(custID);
+        
+        String url = "/adminread";
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+        dispatcher.forward (request, response);
     }
 
     /**

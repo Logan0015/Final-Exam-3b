@@ -58,7 +58,7 @@ public class UpdateQuery {
     public void doUpdate (Customers data){
         
         try {
-            String query = "UPDATE customers SET firstName = ?, lastName = ?, address = ?, address2 = ?, city = ?, state = ?, zip = ?, emailAddress = ? WHERE customerID = ?";
+            String query = "UPDATE customers SET fName = ?, lName = ?, address = ?, address2 = ?, city = ?, state = ?, zipCode = ?, emailAddress = ? WHERE customerID = ?";
             
             PreparedStatement ps = conn.prepareStatement(query);
             

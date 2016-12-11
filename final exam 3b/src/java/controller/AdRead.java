@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Logan
  */
-@WebServlet(name = "AdRead", urlPatterns = {"/adminRead"})
+@WebServlet(name = "AdRead", urlPatterns = {"/AdRead"})
 public class AdRead extends HttpServlet {
 
     /**
