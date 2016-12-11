@@ -54,9 +54,9 @@ public class AdReadQuery {
         }    
 }    
 
-    public void doRead() {
+    public void doAdRead() {
     try{
-        String query = "SELECT * FROM Customers";
+        String query = "Select * from Customers";
         PreparedStatement ps = conn.prepareStatement(query);
         this.results = ps.executeQuery();
         } catch (SQLException ex) {

@@ -15,6 +15,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ *
+ * @author Logan
+ */
 @WebServlet(name = "AdRead", urlPatterns = {"/adminRead"})
 public class AdRead extends HttpServlet {
 
@@ -71,11 +75,11 @@ public class AdRead extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        AReadQuery rq = new AReadQuery();
-        rq.doARead();
-        String table = rq.getHTMLTable();
-        request.setAttribute("table", table);
-        String url = "/adminread.jsp";
+        AdReadQuery rq = new AdReadQuery();
+        rq.doAdRead();
+        String custTable = rq.getHTMLTable();
+        request.setAttribute("table", custTable);
+        String url = "/adminRead.jsp";
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
         dispatcher.forward(request, response);
