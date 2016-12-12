@@ -79,7 +79,7 @@ public class UpdateFormServlet extends HttpServlet {
         int customerID = Integer.parseInt(request.getParameter("customerID"));
         ReadRecord rr = new ReadRecord(customerID);
         rr.doRead();
-        Customers data = rr.getCustomer();
+        Customers data = rr.getData();
         request.setAttribute("customer", data);
         String url = "/updateForm.jsp";
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);

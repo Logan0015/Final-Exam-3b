@@ -6,6 +6,7 @@ package controller;
  * @author Logan
  */
 import dbhelpers.AdReadQuery;
+import dbhelpers.ReadQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Logan
  */
-@WebServlet(name = "AdRead", urlPatterns = {"/adminRead"})
+@WebServlet(name = "AdRead", urlPatterns = {"/adRead.jsp"})
 public class AdRead extends HttpServlet {
 
     /**
@@ -77,9 +78,9 @@ public class AdRead extends HttpServlet {
         
         AdReadQuery rq = new AdReadQuery();
         rq.doAdRead();
-        String custTable = rq.getHTMLTable();
-        request.setAttribute("table", custTable);
-        String url = "/adminRead.jsp";
+        String table = rq.getHTMLtable();
+        request.setAttribute("table", table);
+        String url = "/adRead.jsp";
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
         dispatcher.forward(request, response);

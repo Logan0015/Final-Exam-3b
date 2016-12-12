@@ -71,8 +71,8 @@ public class ReadRecord {
             this.results = ps.executeQuery();
             this.results.next();
             data.setCustomerID(this.results.getInt("customerID"));
-            data.setfName(this.results.getString("firstName"));
-            data.setlName(this.results.getString("lastName"));
+            data.setFName(this.results.getString("fName"));
+            data.setLName(this.results.getString("lName"));
             data.setAddress(this.results.getString("address"));
             data.setAddress2(this.results.getString("address2"));
             data.setCity(this.results.getString("city"));
@@ -85,7 +85,7 @@ public class ReadRecord {
 
     }
 
-    public Customers getCustomer() {
+    public Customers getData() {
         return this.data;
     }
 }

@@ -76,7 +76,7 @@ public class UpdateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        int customerID = Integer.parseInt(request.getParameter("id"));
+        int customerID = Integer.parseInt(request.getParameter("customerID"));
         String fName = request.getParameter("fName");
         String lName = request.getParameter("lName");
         String address = request.getParameter("address");
@@ -89,8 +89,8 @@ public class UpdateServlet extends HttpServlet {
         
         Customers data = new Customers ();
         data.setCustomerID(customerID);
-        data.setfName(fName);
-        data.setlName(lName);
+        data.setFName(fName);
+        data.setLName(lName);
         data.setAddress(address);
         data.setAddress2(address2);
         data.setCity(city);
@@ -101,7 +101,7 @@ public class UpdateServlet extends HttpServlet {
         UpdateQuery uq = new UpdateQuery();
         uq.doUpdate(data);
         
-        String url = "/adminread";
+        String url = "/adRead";
         
         RequestDispatcher dispatcher = request.getRequestDispatcher (url);
         dispatcher.forward(request, response);

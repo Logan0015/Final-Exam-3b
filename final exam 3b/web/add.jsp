@@ -15,7 +15,8 @@
     
     
     <body>
-        <%@include file="Administrative/adHeader.jsp" %>    
+        <%@include file="Administrative/adHeader.jsp" %>
+        <%@include file="Administrative/adMenu.jsp" %>
         <h1>Add Customer</h1>
         <form name="AddForm" action="addCustomer" method="post">
             <table>
@@ -112,7 +113,7 @@
                             <option value="WV">WV</option>
                             <option value="WI">WI</option>
                             <option value="WY">WY</option>
-                        </select>
+                        
                     </td>
                 </tr>
                 

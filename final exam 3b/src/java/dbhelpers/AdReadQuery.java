@@ -65,53 +65,50 @@ public class AdReadQuery {
 
     }
 
-    public String getHTMLTable() {
-        String custTable = "";
-       
+    public String getHTMLtable() {
+        String table = "";   
+        table+="<tr>";
+        table+="<th> Customer ID </th>";
+        table+="</tr>";
+        
+        table+="<tr>";
+        table+="<th> First Name </th>";
+        table+="</tr>";
+        
+        table+="<tr>";
+        table+="<th> Last Name </th>";
+        table+="</tr>";
+        
+        table+="<tr>";
+        table+="<th> Address </th>";
+        table+="</tr>";
+        
+        table+="<tr>";
+        table+="<th> Apt/Suite # </th>";
+        table+="</tr>";
+        
+        table+="<tr>";
+        table+="<th> City </th>";
+        table+="</tr>";
+        
+        table+="<tr>";
+        table+="<th> State </th>";
+        table+="</tr>";
+        
+        table+="<tr>";
+        table+="<th> Zip Code </th>";
+        table+="</tr>";
+        
+        table+="<tr>";
+        table+="<th> Email Address </th>";
+        table+="</tr>";
+        
         try {
-            
-        custTable+="<tr>";
-        custTable+="<th> Customer ID </th>";
-        custTable+="</tr>";
-        
-        custTable+="<tr>";
-        custTable+="<th> First Name </th>";
-        custTable+="</tr>";
-        
-        custTable+="<tr>";
-        custTable+="<th> Last Name </th>";
-        custTable+="</tr>";
-        
-        custTable+="<tr>";
-        custTable+="<th> Address </th>";
-        custTable+="</tr>";
-        
-        custTable+="<tr>";
-        custTable+="<th> Apt/Suite # </th>";
-        custTable+="</tr>";
-        
-        custTable+="<tr>";
-        custTable+="<th> City </th>";
-        custTable+="</tr>";
-        
-        custTable+="<tr>";
-        custTable+="<th> State </th>";
-        custTable+="</tr>";
-        
-        custTable+="<tr>";
-        custTable+="<th> Zip Code </th>";
-        custTable+="</tr>";
-        
-        custTable+="<tr>";
-        custTable+="<th> Email Address </th>";
-        custTable+="</tr>";
-        
-        
         while(this.results.next()){
             Customers data = new Customers();
             data.setCustomerID(this.results.getInt("customerID"));
-            data.setfName(this.results.getString("firstName"));
-            data.setlName(this.results.getString("lastName"));
+            data.setFName(this.results.getString("fName"));
+            data.setLName(this.results.getString("lName"));
             data.setAddress(this.results.getString("address"));
             data.setAddress2(this.results.getString("address2"));
             data.setCity(this.results.getString("City"));
@@ -119,70 +116,70 @@ public class AdReadQuery {
             data.setZipCode(this.results.getString("Zip Code"));
             data.setEmailAddress(this.results.getString("Email Address"));
             
-            custTable+= "<tr>";
-            custTable+= "<td>";
-            custTable+= data.getCustomerID();
-            custTable+= "/td>";
-            custTable+= "</tr>";
+            table+= "<tr>";
+            table+= "<td>";
+            table+= data.getCustomerID();
+            table+= "/td>";
+            table+= "</tr>";
             
-            custTable+= "<tr>";
-            custTable+= "<td>";
-            custTable+= data.getfName();
-            custTable+= "/td>";
-            custTable+= "</tr>";
+            table+= "<tr>";
+            table+= "<td>";
+            table+= data.getFName();
+            table+= "/td>";
+            table+= "</tr>";
             
-            custTable+= "<tr>";
-            custTable+= "<td>";
-            custTable+= data.getlName();
-            custTable+= "/td>";
-            custTable+= "</tr>";
+            table+= "<tr>";
+            table+= "<td>";
+            table+= data.getLName();
+            table+= "/td>";
+            table+= "</tr>";
             
-            custTable+= "<tr>";
-            custTable+= "<td>";
-            custTable+= data.getAddress();
-            custTable+= "/td>";
-            custTable+= "</tr>";
+            table+= "<tr>";
+            table+= "<td>";
+            table+= data.getAddress();
+            table+= "/td>";
+            table+= "</tr>";
             
-            custTable+= "<tr>";
-            custTable+= "<td>";
-            custTable+= data.getAddress2();
-            custTable+= "/td>";
-            custTable+= "</tr>";
+            table+= "<tr>";
+            table+= "<td>";
+            table+= data.getAddress2();
+            table+= "/td>";
+            table+= "</tr>";
             
-            custTable+= "<tr>";
-            custTable+= "<td>";
-            custTable+= data.getCity();
-            custTable+= "/td>";
-            custTable+= "</tr>";
+            table+= "<tr>";
+            table+= "<td>";
+            table+= data.getCity();
+            table+= "/td>";
+            table+= "</tr>";
             
-            custTable+= "<tr>";
-            custTable+= "<td>";
-            custTable+= data.getState();
-            custTable+= "/td>";
-            custTable+= "</tr>";
+            table+= "<tr>";
+            table+= "<td>";
+            table+= data.getState();
+            table+= "/td>";
+            table+= "</tr>";
             
-            custTable+= "<tr>";
-            custTable+= "<td>";
-            custTable+= data.getZipCode();
-            custTable+= "/td>";
-            custTable+= "</tr>";
+            table+= "<tr>";
+            table+= "<td>";
+            table+= data.getZipCode();
+            table+= "/td>";
+            table+= "</tr>";
             
-            custTable+= "<tr>";
-            custTable+= "<td>";
-            custTable+= data.getEmailAddress();
-            custTable+= "/td>";
-            custTable+= "</tr>";
+            table+= "<tr>";
+            table+= "<td>";
+            table+= data.getEmailAddress();
+            table+= "/td>";
+            table+= "</tr>";
             
-            custTable+= "<tr>";
-            custTable+= "<td>";
-            custTable+= "a href=update?customerID=" + data.getCustomerID()+ "> Update </a>" + "<a href=delete?customerID"+ data.getCustomerID()+ "> Delete </a>";
-            custTable+= "/td>";
-            custTable+= "</tr>";
+            table+= "<tr>";
+            table+= "<td>";
+            table+= "a href=update?customerID=" + data.getCustomerID()+ "> Update </a>" + "<a href=delete?customerID"+ data.getCustomerID()+ "> Delete </a>";
+            table+= "/td>";
+            table+= "</tr>";
         }
         } catch (SQLException ex){
             Logger.getLogger(AdReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-        custTable +="</table>";
-        return custTable;
+        table +="</table>";
+        return table;
     }
 }

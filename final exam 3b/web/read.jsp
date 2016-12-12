@@ -12,9 +12,9 @@
         <title>Read</title>
     </head>
     <body>
-        
+        <%@include file="includes/menu.jsp" %>   
         <h1>All Customers</h1>
-    <% String table = (String) request.getAttribute("table");%>
-    <%= table %>
+        <% String table = (String) request.getAttribute("table");%>
+        <%= table %>
     </body>
 </html>

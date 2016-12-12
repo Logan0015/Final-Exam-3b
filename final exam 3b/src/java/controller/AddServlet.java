@@ -86,8 +86,8 @@ public class AddServlet extends HttpServlet {
     
         
         Customers data = new Customers();
-        data.setfName(fName);
-        data.setlName(lName);
+        data.setFName(fName);
+        data.setLName(lName);
         data.setAddress(address);
         data.setAddress2(address2);
         data.setCity(city);
@@ -98,7 +98,7 @@ public class AddServlet extends HttpServlet {
         AddQuery aq = new AddQuery ();
         aq.doAdd (data);
         
-        String url = "/adminread";
+        String url = "/adRead";
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
         dispatcher.forward (request, response);

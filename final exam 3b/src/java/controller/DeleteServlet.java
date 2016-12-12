@@ -74,11 +74,11 @@ public class DeleteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       int custID = Integer.parseInt(request.getParameter("custID"));
+       int customerID = Integer.parseInt(request.getParameter("customerID"));
         DeleteQuery dq = new DeleteQuery();
-        dq.doDelete(custID);
+        dq.doDelete(customerID);
         
-        String url = "/adminread";
+        String url = "/adRead";
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
         dispatcher.forward (request, response);

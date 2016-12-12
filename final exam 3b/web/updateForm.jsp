@@ -32,7 +32,7 @@
                     <td class = "right">
                         First Name:  
                     </td>
-                    <td class = "left"><input type="text" name="firstName" value="<%= data.getfName() %>" size="50" required /> 
+                    <td class = "left"><input type="text" name="firstName" value="<%= data.getFName() %>" size="50" required /> 
                     </td>
                 </tr>
                 <tr>
@@ -40,7 +40,7 @@
                     <td class = "right">
                         Last Name:  
                     </td>
-                    <td class = "left"><input type="text" name="lastName" value="<%= data.getlName() %>" size="50" required /> 
+                    <td class = "left"><input type="text" name="lastName" value="<%= data.getLName() %>" size="50" required /> 
                     </td>
                 </tr>
 

@@ -78,8 +78,8 @@ public class SearchServlet extends HttpServlet {
             String name = request.getParameter("searchVal");
             SearchQuery sq = new SearchQuery();
             sq.doSearch(name);
-            String custTable = sq.getHTMLtable();
-            request.setAttribute("table", custTable);
+            String table = sq.getHTMLtable();
+            request.setAttribute("table", table);
             String url = "read.jsp";
             
             RequestDispatcher dispatcher = request.getRequestDispatcher(url);

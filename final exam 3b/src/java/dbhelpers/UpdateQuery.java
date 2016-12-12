@@ -62,8 +62,8 @@ public class UpdateQuery {
             
             PreparedStatement ps = conn.prepareStatement(query);
             
-            ps.setString(1, data.getfName());
-            ps.setString(2, data.getlName());
+            ps.setString(1, data.getFName());
+            ps.setString(2, data.getLName());
             ps.setString(3, data.getAddress());
             ps.setString(4, data.getAddress2());
             ps.setString(5, data.getCity());

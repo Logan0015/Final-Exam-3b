@@ -94,14 +94,14 @@ public class AdSearchQuery {
 
                 Customers data = new Customers();
                 data.setCustomerID(this.results.getInt("customerID"));
-                data.setfName(this.results.getString("firstName"));
-                data.setlName(this.results.getString("lastName"));
+                data.setFName(this.results.getString("fName"));
+                data.setLName(this.results.getString("lName"));
                 data.setAddress(this.results.getString("address1"));
                 data.setAddress2(this.results.getString("address2"));
                 data.setCity(this.results.getString("city"));
                 data.setState(this.results.getString("state"));
                 data.setZipCode(this.results.getString("zipCode"));
-                data.setEmailAddress(this.results.getString("Email Address"));
+                data.setEmailAddress(this.results.getString("emailAddress"));
 
 
                 table += "<tr>";
@@ -110,11 +110,11 @@ public class AdSearchQuery {
                 table += "</td>";
 
                 table += "<td>";
-                table += data.getfName();
+                table += data.getFName();
                 table += "</td>";
 
                 table += "<td>";
-                table += data.getlName();
+                table += data.getLName();
                 table += "</td>";
 
                 
@@ -150,7 +150,7 @@ public class AdSearchQuery {
                 table += "</tr>";
             }
         } catch (SQLException ex) {
-            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         table += "</table>";

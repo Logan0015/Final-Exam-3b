@@ -1,3 +1,4 @@
+
 package dbhelpers;
 
 import java.io.IOException;
@@ -52,7 +53,7 @@ public class SearchQuery {
         
     public void doSearch (String name){
         try {
-            String query = "SELECT * FROM customers WHERE UPPER(firstName) LIKE ? OR UPPER(lastName) LIKE ? ORDER BY CustomerID ASC";
+            String query = "SELECT * FROM customers WHERE UPPER(firstName) LIKE ? OR UPPER(lastName) LIKE ? ORDER BY CustID ASC";
             
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, "%" + name.toUpperCase() + "%");
@@ -65,52 +66,51 @@ public class SearchQuery {
         
     }
     
-    public String getHTMLtable() {
-
-        String table = "";
-        table += "<table>";
-
-        try {
-
+    public String getHTMLtable(){
+            
+            String table = "";
+            table += "<table border=5>";
             table += "<tr>";
             table += "<th> Customer ID </th>";
             table += "<th> First Name </th>";
             table += "<th> Last Name </th>";
-            table += "<th> Address Line 1 </th>";
-            table += "<th> Apt/Suite # </th>";
+            table += "<th> Address </th>";
+            table += "<th> Address </th>";
             table += "<th> City </th>";
             table += "<th> State </th>";
-            table += "<th> Zip Code </th>";
-            table += "<th> Email Address </th>";
+            table += "<th> Zip </th>";
+            table += "<th> Email </th>";
+            //table += "<th> Update/Delete </th>";        
             table += "</tr>";
-
-            while (this.results.next()) {
-
+            
+            
+            
+            try {
+            while(this.results.next()){
+                
                 Customers data = new Customers();
                 data.setCustomerID(this.results.getInt("customerID"));
-                data.setfName(this.results.getString("firstName"));
-                data.setlName(this.results.getString("lastName"));
-                data.setAddress(this.results.getString("address1"));
+                data.setFName(this.results.getString("fName"));
+                data.setLName(this.results.getString("lName"));
+                data.setAddress(this.results.getString("address"));
                 data.setAddress2(this.results.getString("address2"));
                 data.setCity(this.results.getString("city"));
                 data.setState(this.results.getString("state"));
                 data.setZipCode(this.results.getString("zipCode"));
-                data.setEmailAddress(this.results.getString("Email Address"));
-
-
+                data.setEmailAddress(this.results.getString("emailAddress"));
+                
                 table += "<tr>";
                 table += "<td>";
                 table += data.getCustomerID();
                 table += "</td>";
-
+                
                 table += "<td>";
-                table += data.getfName();
+                table += data.getFName();
                 table += "</td>";
-
+                
                 table += "<td>";
-                table += data.getlName();
+                table += data.getLName();
                 table += "</td>";
-
                 
                 table += "<td>";
                 table += data.getAddress();
@@ -119,36 +119,36 @@ public class SearchQuery {
                 table += "<td>";
                 table += data.getAddress2();
                 table += "</td>";
-
+                
                 table += "<td>";
                 table += data.getCity();
                 table += "</td>";
-
+                
                 table += "<td>";
                 table += data.getState();
                 table += "</td>";
-
+                
                 table += "<td>";
                 table += data.getZipCode();
                 table += "</td>";
-
+                
                 table += "<td>";
                 table += data.getEmailAddress();
                 table += "</td>";
                 
-                table += "<td>";
-                table += "<a href=update?customerID=" + data.getCustomerID() + "> Update </a>" +"<a href=delete?customerID=" + data.getCustomerID() + "> Delete </a>";
-                table += "</td>";
+                //table += "<td>";
+                //table += "<a href=update?custID=" + customer.getCustID()+ "> Update </a>" + "<a href=delete?custID=" + customer.getCustID() + "> Delete </a>";
+                //table += "</td>";
                 
-
+                
                 table += "</tr>";
             }
         } catch (SQLException ex) {
-            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        table += "</table>";
-
-        return table;
-    }
+            
+            table +="</table>";
+            
+            return table;
+}
 }

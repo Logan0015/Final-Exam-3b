@@ -81,7 +81,7 @@ public class AdSearchServlet extends HttpServlet {
             sq.doSearch(name);
             String table = sq.getHTMLtable();
             request.setAttribute("table", table);
-            String url = "/read.jsp";
+            String url = "adRead.jsp";
             
             RequestDispatcher dispatcher = request.getRequestDispatcher(url);
             dispatcher.forward(request, response);
