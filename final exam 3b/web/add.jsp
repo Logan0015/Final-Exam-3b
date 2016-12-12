@@ -18,7 +18,7 @@
         <%@include file="Administrative/adHeader.jsp" %>
         <%@include file="Administrative/adMenu.jsp" %>
         <h1>Add Customer</h1>
-        <form name="AddForm" action="addCustomer" method="post">
+        <form name="AddForm" action="addCustomers" method="post">
             <table>
                 <tr>
                     <td class="right">
@@ -135,7 +135,7 @@
             </table>   
             
             <input type="submit" name="submit" value="Submit"/>
-            </form>
+           </form>
         <%@include file="Administrative/adFooter.jsp" %>
         
     

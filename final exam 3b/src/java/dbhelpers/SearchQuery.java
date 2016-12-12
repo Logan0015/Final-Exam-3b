@@ -80,7 +80,7 @@ public class SearchQuery {
             table += "<th> State </th>";
             table += "<th> Zip </th>";
             table += "<th> Email </th>";
-            //table += "<th> Update/Delete </th>";        
+                   
             table += "</tr>";
             
             
@@ -88,52 +88,52 @@ public class SearchQuery {
             try {
             while(this.results.next()){
                 
-                Customers customer = new Customers();
-                customer.setCustID(this.results.getInt("customerID"));
-                customer.setFirstName(this.results.getString("firstName"));
-                customer.setLastName(this.results.getString("lastName"));
-                customer.setAddr1(this.results.getString("addr1"));
-                customer.setAddr2(this.results.getString("addr2"));
-                customer.setCity(this.results.getString("city"));
-                customer.setState(this.results.getString("state"));
-                customer.setZip(this.results.getString("zip"));
-                customer.setEmailAddr(this.results.getString("emailAddr"));
+                Customers test2 = new Customers();
+                test2.setCustID(this.results.getInt("customerID"));
+                test2.setFirstName(this.results.getString("firstName"));
+                test2.setLastName(this.results.getString("lastName"));
+                test2.setAddr1(this.results.getString("addr1"));
+                test2.setAddr2(this.results.getString("addr2"));
+                test2.setCity(this.results.getString("city"));
+                test2.setState(this.results.getString("state"));
+                test2.setZip(this.results.getString("zip"));
+                test2.setEmailAddr(this.results.getString("emailAddr"));
                 
                 table += "<tr>";
                 table += "<td>";
-                table += customer.getCustID();
+                table += test2.getCustID();
                 table += "</td>";
                 
                 table += "<td>";
-                table += customer.getFirstName();
+                table += test2.getFirstName();
                 table += "</td>";
                 
                 table += "<td>";
-                table += customer.getLastName();
+                table += test2.getLastName();
                 table += "</td>";
                 
                 table += "<td>";
-                table += customer.getAddr1();
+                table += test2.getAddr1();
                 table += "</td>";
                 
                 table += "<td>";
-                table += customer.getAddr2();
+                table += test2.getAddr2();
                 table += "</td>";
                 
                 table += "<td>";
-                table += customer.getCity();
+                table += test2.getCity();
                 table += "</td>";
                 
                 table += "<td>";
-                table += customer.getState();
+                table += test2.getState();
                 table += "</td>";
                 
                 table += "<td>";
-                table += customer.getZip();
+                table += test2.getZip();
                 table += "</td>";
                 
                 table += "<td>";
-                table += customer.getEmailAddr();
+                table += test2.getEmailAddr();
                 table += "</td>";
                 
                 //table += "<td>";
@@ -144,7 +144,7 @@ public class SearchQuery {
                 table += "</tr>";
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
             
             table +="</table>";

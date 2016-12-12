@@ -20,7 +20,7 @@ import model.Customers;
  *
  * @author Logan
  */
-@WebServlet(name = "AddServlet", urlPatterns = {"/addData"})
+@WebServlet(name = "AddServlet", urlPatterns = {"/addCustomers"})
 public class AddServlet extends HttpServlet {
 
     /**
@@ -85,20 +85,20 @@ public class AddServlet extends HttpServlet {
         String emailAddr = request.getParameter("emailAddr");
     
         
-        Customers customer = new Customers();
-        customer.setFirstName(firstName);
-        customer.setLastName(lastName);
-        customer.setAddr1(addr1);
-        customer.setAddr2(addr2);
-        customer.setCity(city);
-        customer.setState(state);
-        customer.setZip(zip);
-        customer.setEmailAddr(emailAddr);
+        Customers test2 = new Customers();
+        test2.setFirstName(firstName);
+        test2.setLastName(lastName);
+        test2.setAddr1(addr1);
+        test2.setAddr2(addr2);
+        test2.setCity(city);
+        test2.setState(state);
+        test2.setZip(zip);
+        test2.setEmailAddr(emailAddr);
         
         AddQuery aq = new AddQuery ();
-        aq.doAdd (customer);
+        aq.doAdd (test2);
         
-        String url = "/adRead";
+        String url = "/read";
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
         dispatcher.forward (request, response);

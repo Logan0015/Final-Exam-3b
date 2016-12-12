@@ -8,7 +8,7 @@
     <div class="headerText">
         
     <h1>
-        Customer View
+        Admin View
     </h1>
     </div>
 </div>

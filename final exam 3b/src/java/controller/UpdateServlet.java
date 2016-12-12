@@ -87,19 +87,19 @@ public class UpdateServlet extends HttpServlet {
         String emailAddr = request.getParameter("emailAddr");
        
         
-        Customers customer = new Customers ();
-        customer.setCustID(custID);
-        customer.setFirstName(firstName);
-        customer.setLastName(lastName);
-        customer.setAddr1(addr1);
-        customer.setAddr2(addr2);
-        customer.setCity(city);
-        customer.setState(state);
-        customer.setZip(zip);
-        customer.setEmailAddr(emailAddr);
+        Customers test = new Customers ();
+        test.setCustID(custID);
+        test.setFirstName(firstName);
+        test.setLastName(lastName);
+        test.setAddr1(addr1);
+        test.setAddr2(addr2);
+        test.setCity(city);
+        test.setState(state);
+        test.setZip(zip);
+        test.setEmailAddr(emailAddr);
         
         UpdateQuery uq = new UpdateQuery();
-        uq.doUpdate(customer);
+        uq.doUpdate(test);
         
         String url = "/read";
         

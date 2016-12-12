@@ -16,10 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Logan
- */
+
 @WebServlet(name = "AdRead", urlPatterns = {"/adRead.jsp"})
 public class AdRead extends HttpServlet {
 
@@ -77,7 +74,7 @@ public class AdRead extends HttpServlet {
             throws ServletException, IOException {
         
         AdReadQuery rq = new AdReadQuery();
-        rq.doAdRead();
+        rq.doRead();
         String table = rq.getHTMLtable();
         request.setAttribute("table", table);
         String url = "/adRead.jsp";

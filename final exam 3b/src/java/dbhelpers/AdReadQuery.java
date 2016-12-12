@@ -30,12 +30,12 @@ public class AdReadQuery {
         try {
             props.load(instr);
         } catch (IOException ex) {
-            Logger.getLogger(AdReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             instr.close();
         } catch (IOException ex) {
-            Logger.getLogger(AdReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
     
     String driver = props.getProperty("driver.name");
@@ -45,22 +45,22 @@ public class AdReadQuery {
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AdReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             conn = DriverManager.getConnection(url, username, passwd);
         } catch (SQLException ex) {
-            Logger.getLogger(AdReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }    
 }    
 
-    public void doAdRead() {
+    public void doRead() {
     try{
         String query = "Select * from Customers";
         PreparedStatement ps = conn.prepareStatement(query);
         this.results = ps.executeQuery();
         } catch (SQLException ex) {
-        Logger.getLogger(AdReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
     }
 
     }
@@ -105,74 +105,74 @@ public class AdReadQuery {
         
         try {
         while(this.results.next()){
-            Customers customer = new Customers();
-            customer.setCustID(this.results.getInt("custID"));
-            customer.setFirstName(this.results.getString("firstName"));
-            customer.setLastName(this.results.getString("lastName"));
-            customer.setAddr1(this.results.getString("addr1"));
-            customer.setAddr2(this.results.getString("addr2"));
-            customer.setCity(this.results.getString("city"));
-            customer.setState(this.results.getString("state"));
-            customer.setZip(this.results.getString("zip"));
-            customer.setEmailAddr(this.results.getString("emailAddr"));
+            Customers test = new Customers();
+            test.setCustID(this.results.getInt("custID"));
+            test.setFirstName(this.results.getString("firstName"));
+            test.setLastName(this.results.getString("lastName"));
+            test.setAddr1(this.results.getString("addr1"));
+            test.setAddr2(this.results.getString("addr2"));
+            test.setCity(this.results.getString("city"));
+            test.setState(this.results.getString("state"));
+            test.setZip(this.results.getString("zip"));
+            test.setEmailAddr(this.results.getString("emailAddr"));
             
             table+= "<tr>";
             table+= "<td>";
-            table+= customer.getCustID();
+            table+= test.getCustID();
             table+= "/td>";
             table+= "</tr>";
             
             table+= "<tr>";
             table+= "<td>";
-            table+= customer.getFirstName();
+            table+= test.getFirstName();
             table+= "/td>";
             table+= "</tr>";
             
             table+= "<tr>";
             table+= "<td>";
-            table+= customer.getLastName();
+            table+= test.getLastName();
             table+= "/td>";
             table+= "</tr>";
             
             table+= "<tr>";
             table+= "<td>";
-            table+= customer.getAddr1();
+            table+= test.getAddr1();
             table+= "/td>";
             table+= "</tr>";
             
             table+= "<tr>";
             table+= "<td>";
-            table+= customer.getAddr2();
+            table+= test.getAddr2();
             table+= "/td>";
             table+= "</tr>";
             
             table+= "<tr>";
             table+= "<td>";
-            table+= customer.getCity();
+            table+= test.getCity();
             table+= "/td>";
             table+= "</tr>";
             
             table+= "<tr>";
             table+= "<td>";
-            table+= customer.getState();
+            table+= test.getState();
             table+= "/td>";
             table+= "</tr>";
             
             table+= "<tr>";
             table+= "<td>";
-            table+= customer.getZip();
+            table+= test.getZip();
             table+= "/td>";
             table+= "</tr>";
             
             table+= "<tr>";
             table+= "<td>";
-            table+= customer.getEmailAddr();
+            table+= test.getEmailAddr();
             table+= "/td>";
             table+= "</tr>";
             
             table+= "<tr>";
             table+= "<td>";
-            table+= "a href=update?custID=" + customer.getCustID()+ "> Update </a>" + "<a href=delete?custID"+ customer.getCustID()+ "> Delete </a>";
+            table+= "a href=update?custID=" + test.getCustID()+ "> Update </a>" + "<a href=delete?custID"+ test.getCustID()+ "> Delete </a>";
             table+= "/td>";
             table+= "</tr>";
         }

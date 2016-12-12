@@ -8,13 +8,30 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="./css/custom.css"/>
     </head>
     
 
     <body>
-        <%@ include file="includes/header.jsp" %>
+        <div class="page">
+            <div class="container">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="page-header">
+                        <div>
+                            <h1>Exam 3b</h1>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
         <%@include file="includes/menu.jsp" %>
         <h1>Customers</h1>
         <p>
