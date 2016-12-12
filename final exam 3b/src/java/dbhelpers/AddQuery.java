@@ -56,21 +56,21 @@ public class AddQuery {
         
     }
     
-    public void doAdd (Customers data){
+    public void doAdd (Customers customer){
     
         try {
             String query = "INSERT INTO customers (firstName, lastName, addr1, addr2, city, state, zip, emailAddr) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             
             PreparedStatement ps = conn.prepareStatement(query);
             
-            ps.setString(1, data.getFirstName());
-            ps.setString(2, data.getLastName());
-            ps.setString(3, data.getAddr1());
-            ps.setString(4, data.getAddr2());
-            ps.setString(5, data.getCity());
-            ps.setString(6, data.getState());
-            ps.setString(7, data.getZip());
-            ps.setString(8, data.getEmailAddr());
+            ps.setString(1, customer.getFirstName());
+            ps.setString(2, customer.getLastName());
+            ps.setString(3, customer.getAddr1());
+            ps.setString(4, customer.getAddr2());
+            ps.setString(5, customer.getCity());
+            ps.setString(6, customer.getState());
+            ps.setString(7, customer.getZip());
+            ps.setString(8, customer.getEmailAddr());
             
             ps.executeUpdate();
             

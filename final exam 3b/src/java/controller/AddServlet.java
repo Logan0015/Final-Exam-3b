@@ -85,18 +85,18 @@ public class AddServlet extends HttpServlet {
         String emailAddr = request.getParameter("emailAddr");
     
         
-        Customers data = new Customers();
-        data.setFirstName(firstName);
-        data.setLastName(lastName);
-        data.setAddr1(addr1);
-        data.setAddr2(addr2);
-        data.setCity(city);
-        data.setState(state);
-        data.setZip(zip);
-        data.setEmailAddr(emailAddr);
+        Customers customer = new Customers();
+        customer.setFirstName(firstName);
+        customer.setLastName(lastName);
+        customer.setAddr1(addr1);
+        customer.setAddr2(addr2);
+        customer.setCity(city);
+        customer.setState(state);
+        customer.setZip(zip);
+        customer.setEmailAddr(emailAddr);
         
         AddQuery aq = new AddQuery ();
-        aq.doAdd (data);
+        aq.doAdd (customer);
         
         String url = "/adRead";
         

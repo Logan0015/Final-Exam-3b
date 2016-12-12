@@ -88,52 +88,52 @@ public class SearchQuery {
             try {
             while(this.results.next()){
                 
-                Customers data = new Customers();
-                data.setCustID(this.results.getInt("customerID"));
-                data.setFirstName(this.results.getString("firstName"));
-                data.setLastName(this.results.getString("lastName"));
-                data.setAddr1(this.results.getString("addr1"));
-                data.setAddr2(this.results.getString("addr2"));
-                data.setCity(this.results.getString("city"));
-                data.setState(this.results.getString("state"));
-                data.setZip(this.results.getString("zip"));
-                data.setEmailAddr(this.results.getString("emailAddr"));
+                Customers customer = new Customers();
+                customer.setCustID(this.results.getInt("customerID"));
+                customer.setFirstName(this.results.getString("firstName"));
+                customer.setLastName(this.results.getString("lastName"));
+                customer.setAddr1(this.results.getString("addr1"));
+                customer.setAddr2(this.results.getString("addr2"));
+                customer.setCity(this.results.getString("city"));
+                customer.setState(this.results.getString("state"));
+                customer.setZip(this.results.getString("zip"));
+                customer.setEmailAddr(this.results.getString("emailAddr"));
                 
                 table += "<tr>";
                 table += "<td>";
-                table += data.getCustID();
+                table += customer.getCustID();
                 table += "</td>";
                 
                 table += "<td>";
-                table += data.getFirstName();
+                table += customer.getFirstName();
                 table += "</td>";
                 
                 table += "<td>";
-                table += data.getLastName();
+                table += customer.getLastName();
                 table += "</td>";
                 
                 table += "<td>";
-                table += data.getAddr1();
+                table += customer.getAddr1();
                 table += "</td>";
                 
                 table += "<td>";
-                table += data.getAddr2();
+                table += customer.getAddr2();
                 table += "</td>";
                 
                 table += "<td>";
-                table += data.getCity();
+                table += customer.getCity();
                 table += "</td>";
                 
                 table += "<td>";
-                table += data.getState();
+                table += customer.getState();
                 table += "</td>";
                 
                 table += "<td>";
-                table += data.getZip();
+                table += customer.getZip();
                 table += "</td>";
                 
                 table += "<td>";
-                table += data.getEmailAddr();
+                table += customer.getEmailAddr();
                 table += "</td>";
                 
                 //table += "<td>";
