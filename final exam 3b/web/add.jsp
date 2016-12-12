@@ -24,7 +24,7 @@
                     <td class="right">
                         First Name:
                     </td>
-                    <td class ="left"><input type="text" name="fName" value="" size="50" required/>
+                    <td class ="left"><input type="text" name="firstName" value="" size="50" required/>
                     </td>
                 </tr>
                 
@@ -32,7 +32,7 @@
                     <td class="right">
                         Last Name:
                     </td>
-                    <td class ="left"><input type="text" name="lName" value="" size="50" required/>
+                    <td class ="left"><input type="text" name="lastName" value="" size="50" required/>
                     </td>
                 </tr>
                 
@@ -40,7 +40,7 @@
                     <td class="right">
                         Address:
                     </td>
-                    <td class ="left"><input type="text" name="address" value="" size="50" required/>
+                    <td class ="left"><input type="text" name="addr1" value="" size="50" required/>
                     </td>
                 </tr>
                 
@@ -48,7 +48,7 @@
                     <td class="right">
                         Apt/Suite# :
                     </td>
-                    <td class ="left"><input type="number" name="address2" value="" size="50" />
+                    <td class ="left"><input type="number" name="addr2" value="" size="50" />
                     </td>
                 </tr>
                 
@@ -121,14 +121,14 @@
                     <td class="right">
                         Zip:
                     </td>
-                    <td class="left"><input type="number" name="zipCode" value="" size="50" required/>
+                    <td class="left"><input type="number" name="zip" value="" size="50" required/>
                 </tr>
                 
                 <tr>
                     <td class="right">
                         Email:
                     </td>
-                    <td class="left"><input type="email" name="emailAddress" value="" size="50" required/>
+                    <td class="left"><input type="email" name="emailAddr" value="" size="50" required/>
                     </td>
                 </tr>
                 

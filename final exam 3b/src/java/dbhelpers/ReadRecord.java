@@ -25,10 +25,10 @@ public class ReadRecord {
 
     private Connection conn;
     private ResultSet results;
-    private Customers data = new Customers();
-    private int customerID;
+    private Customers customer = new Customers();
+    private int custID;
 
-    public ReadRecord(int customerID) {
+    public ReadRecord(int custID) {
 
         Properties props = new Properties();
         InputStream instr = getClass().getResourceAsStream("dbConn.properties");
@@ -48,7 +48,7 @@ public class ReadRecord {
         String username = props.getProperty("user.name");
         String passwd = props.getProperty("user.password");
 
-        this.customerID = customerID;
+        this.custID = custID;
 
         try {
             Class.forName(driver);
@@ -65,27 +65,27 @@ public class ReadRecord {
     public void doRead() {
 
         try {
-            String query = "SELECT * FROM customers WHERE customerID = ?";
+            String query = "SELECT * FROM customers WHERE custID = ?";
             PreparedStatement ps = conn.prepareStatement(query);
-            ps.setInt(1, customerID);
+            ps.setInt(1, custID);
             this.results = ps.executeQuery();
             this.results.next();
-            data.setCustomerID(this.results.getInt("customerID"));
-            data.setFName(this.results.getString("fName"));
-            data.setLName(this.results.getString("lName"));
-            data.setAddress(this.results.getString("address"));
-            data.setAddress2(this.results.getString("address2"));
-            data.setCity(this.results.getString("city"));
-            data.setState(this.results.getString("state"));
-            data.setZipCode(this.results.getString("zipCode"));
-            data.setEmailAddress(this.results.getString("emailAddress"));
+            customer.setCustID(this.results.getInt("custID"));
+            customer.setFirstName(this.results.getString("firstName"));
+            customer.setLastName(this.results.getString("lastName"));
+            customer.setAddr1(this.results.getString("addr1"));
+            customer.setAddr2(this.results.getString("addr2"));
+            customer.setCity(this.results.getString("city"));
+            customer.setState(this.results.getString("state"));
+            customer.setZip(this.results.getString("zip"));
+            customer.setEmailAddr(this.results.getString("emailAddr"));
         } catch (SQLException ex) {
             Logger.getLogger(ReadRecord.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
 
-    public Customers getData() {
-        return this.data;
+    public Customers getCustomer() {
+        return this.customer;
     }
 }

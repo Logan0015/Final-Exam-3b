@@ -11,10 +11,22 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Read</title>
     </head>
+    
     <body>
-        <%@include file="includes/menu.jsp" %>   
-        <h1>All Customers</h1>
+    <%@ include file="includes/header.jsp" %>    
+    <%@ include file="includes/menu.jsp" %>
+    <h1>Customers</h1>
+        
+    <p>
+       
         <% String table = (String) request.getAttribute("table");%>
         <%= table %>
+    </p>
+        
+    <br>
+    <br>
+        <%@ include file="includes/footer.jsp" %>
+        </div>
     </body>
+        
 </html>

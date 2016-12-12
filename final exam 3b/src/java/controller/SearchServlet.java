@@ -80,7 +80,7 @@ public class SearchServlet extends HttpServlet {
             sq.doSearch(name);
             String table = sq.getHTMLtable();
             request.setAttribute("table", table);
-            String url = "read.jsp";
+            String url = "/read.jsp";
             
             RequestDispatcher dispatcher = request.getRequestDispatcher(url);
             dispatcher.forward(request, response);

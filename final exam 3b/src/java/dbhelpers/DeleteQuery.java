@@ -53,11 +53,11 @@ public class DeleteQuery {
         
     }
     
-    public void doDelete (int customerID){
+    public void doDelete (int custID){
         try {
-            String query = "DELETE FROM customers WHERE customerID = ?";
+            String query = "DELETE FROM customers WHERE custID = ?";
             PreparedStatement ps = conn.prepareStatement(query);
-            ps.setInt(1, customerID);
+            ps.setInt(1, custID);
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(DeleteQuery.class.getName()).log(Level.SEVERE, null, ex);

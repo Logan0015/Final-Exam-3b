@@ -12,78 +12,78 @@ package model;
 
 public class Customers {
 
-    private int customerID;
-    private String fName;
-    private String lName;
-    private String address;
-    private String address2;
+    private int custID;
+    private String firstName;
+    private String lastName;
+    private String addr1;
+    private String addr2;
     private String city;
     private String state;
-    private String zipCode;
-    private String emailAddress;
+    private String zip;
+    private String emailAddr;
 
     public Customers() {
-        this.customerID = 0;
-        this.fName = "";
-        this.lName = "";
-        this.address = "";
-        this.address2 = "";
+        this.custID = 0;
+        this.firstName = "";
+        this.lastName = "";
+        this.addr1 = "";
+        this.addr2 = "";
         this.city = "";
         this.state = "";
-        this.zipCode = "";
-        this.emailAddress = "";
+        this.zip = "";
+        this.emailAddr = "";
     }
 
-    public Customers(int customerID, String fName, String lName, String address, String address2, String city, String state, String zipCode, String emailAddress) {
-        this.customerID = customerID;
-        this.fName = fName;
-        this.lName = lName;
-        this.address = address;
-        this.address2 = address2;
+    public Customers(int custID, String firstName, String lastName, String addr1, String addr2, String city, String state, String zip, String emailAddr) {
+        this.custID = custID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.addr1 = addr1;
+        this.addr2 = addr2;
         this.city = city;
         this.state = state;
-        this.zipCode = zipCode;
-        this.emailAddress = emailAddress;
+        this.zip = zip;
+        this.emailAddr = emailAddr;
     }
 
-    public int getCustomerID() {
-        return customerID;
+    public int getCustID() {
+        return custID;
     }
 
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
+    public void setCustID(int custID) {
+        this.custID = custID;
     }
 
-    public String getFName() {
-        return fName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFName(String fName) {
-        this.fName = fName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLName() {
-        return lName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLName(String lName) {
-        this.lName = lName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getAddr1() {
+        return addr1;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddr1(String addr1) {
+        this.addr1 = addr1;
     }
 
-    public String getAddress2() {
-        return address2;
+    public String getAddr2() {
+        return addr2;
     }
 
-    public void setAddress2(String address2) {
-        this.address2 = address2;
+    public void setAddr2(String addr2) {
+        this.addr2 = addr2;
     }
 
     public String getCity() {
@@ -102,25 +102,25 @@ public class Customers {
         this.state = state;
     }
 
-    public String getZipCode() {
-        return zipCode;
+    public String getZip() {
+        return zip;
     }
 
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
+    public void setZip(String zip) {
+        this.zip = zip;
     }
 
-    public String getEmailAddress() {
-        return emailAddress;
+    public String getEmailAddr() {
+        return emailAddr;
     }
 
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
+    public void setEmailAddr(String emailAddr) {
+        this.emailAddr = emailAddr;
     }
 
     @Override
     public String toString() {
-        return "Customers{" + "customerID=" + customerID + ", fName=" + fName + ", lName=" + lName + ", address=" + address + ", address2=" + address2 + ", city=" + city + ", state=" + state + ", zipCode=" + zipCode + ", emailAddress=" + emailAddress + '}';
+        return "Customers{" + "custID=" + custID + ", firstName=" + firstName + ", lastName=" + lastName + ", addr1=" + addr1 + ", addr2=" + addr2 + ", city=" + city + ", state=" + state + ", zip=" + zip + ", emailAddr=" + emailAddr + '}';
     }
 
     

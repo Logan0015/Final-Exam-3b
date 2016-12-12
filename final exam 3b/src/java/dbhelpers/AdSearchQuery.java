@@ -58,7 +58,7 @@ public class AdSearchQuery {
         
     public void doSearch (String name){
         try {
-            String query = "SELECT * FROM customers WHERE UPPER(fName) LIKE ? OR UPPER(lName) LIKE ? ORDER BY customerID ASC";
+            String query = "SELECT * FROM customers WHERE UPPER(firstName) LIKE ? OR UPPER(lastName) LIKE ? ORDER BY custID ASC";
             
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, "%" + name.toUpperCase() + "%");
@@ -93,37 +93,37 @@ public class AdSearchQuery {
             while (this.results.next()) {
 
                 Customers data = new Customers();
-                data.setCustomerID(this.results.getInt("customerID"));
-                data.setFName(this.results.getString("fName"));
-                data.setLName(this.results.getString("lName"));
-                data.setAddress(this.results.getString("address1"));
-                data.setAddress2(this.results.getString("address2"));
+                data.setCustID(this.results.getInt("custID"));
+                data.setFirstName(this.results.getString("firstName"));
+                data.setLastName(this.results.getString("lastName"));
+                data.setAddr1(this.results.getString("addr1"));
+                data.setAddr2(this.results.getString("addr2"));
                 data.setCity(this.results.getString("city"));
                 data.setState(this.results.getString("state"));
-                data.setZipCode(this.results.getString("zipCode"));
-                data.setEmailAddress(this.results.getString("emailAddress"));
+                data.setZip(this.results.getString("zip"));
+                data.setEmailAddr(this.results.getString("emailAddr"));
 
 
                 table += "<tr>";
                 table += "<td>";
-                table += data.getCustomerID();
+                table += data.getCustID();
                 table += "</td>";
 
                 table += "<td>";
-                table += data.getFName();
+                table += data.getFirstName();
                 table += "</td>";
 
                 table += "<td>";
-                table += data.getLName();
+                table += data.getLastName();
                 table += "</td>";
 
                 
                 table += "<td>";
-                table += data.getAddress();
+                table += data.getAddr1();
                 table += "</td>";
                 
                 table += "<td>";
-                table += data.getAddress2();
+                table += data.getAddr2();
                 table += "</td>";
 
                 table += "<td>";
@@ -135,15 +135,15 @@ public class AdSearchQuery {
                 table += "</td>";
 
                 table += "<td>";
-                table += data.getZipCode();
+                table += data.getZip();
                 table += "</td>";
 
                 table += "<td>";
-                table += data.getEmailAddress();
+                table += data.getEmailAddr();
                 table += "</td>";
                 
                 table += "<td>";
-                table += "<a href=update?customerID=" + data.getCustomerID() + "> Update </a>" +"<a href=delete?customerID=" + data.getCustomerID() + "> Delete </a>";
+                table += "<a href=update?custID=" + data.getCustID() + "> Update </a>" +"<a href=delete?custID=" + data.getCustID() + "> Delete </a>";
                 table += "</td>";
                 
 

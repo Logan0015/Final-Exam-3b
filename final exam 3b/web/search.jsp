@@ -16,5 +16,6 @@
                     <input type="text" name="searchVal" value="" />
                     <br><br>
                     <input type="submit" name="search" value="Search" />
+        </form>
     </body>
 </html>

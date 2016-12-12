@@ -76,11 +76,11 @@ public class UpdateFormServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        int customerID = Integer.parseInt(request.getParameter("customerID"));
-        ReadRecord rr = new ReadRecord(customerID);
+        int custID = Integer.parseInt(request.getParameter("custID"));
+        ReadRecord rr = new ReadRecord(custID);
         rr.doRead();
-        Customers data = rr.getData();
-        request.setAttribute("customer", data);
+        Customers customer = rr.getCustomer();
+        request.setAttribute("customer", customer);
         String url = "/updateForm.jsp";
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
         dispatcher.forward(request, response);
