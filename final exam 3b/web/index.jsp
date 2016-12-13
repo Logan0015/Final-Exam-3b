@@ -12,8 +12,10 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="./css/custom.css"/>
+    <link rel="stylesheet" type="text/css" href="custom.css"/>
     </head>
+    <div class="page1">
+        
     
 
     <body>
@@ -43,6 +45,6 @@
         <%@include file="includes/footer.jsp" %>
     </body>
     
-    
+  </div>  
 
 </html>

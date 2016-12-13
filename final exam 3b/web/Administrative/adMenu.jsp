@@ -7,7 +7,7 @@
 <div class="navigationbar">
     <ul class="navigation">
         <li class="active"><a href="index.jsp">Home</a></li>
-        <li><a href="../AdRead">View All Customers</a></li>
+        <li><a href="read">View All Customers</a></li>
         <li><a href="add">Add New Customer</a></li>
         <li><a href="admin.jsp">Admin</a></li>
     </ul>
